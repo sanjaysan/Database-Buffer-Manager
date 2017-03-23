@@ -1,0 +1,131 @@
+\hypertarget{classbadgerdb_1_1BufHashTbl}{\section{badgerdb\-:\-:Buf\-Hash\-Tbl Class Reference}
+\label{classbadgerdb_1_1BufHashTbl}\index{badgerdb\-::\-Buf\-Hash\-Tbl@{badgerdb\-::\-Buf\-Hash\-Tbl}}
+}
+
+
+Hash table class to keep track of pages in the buffer pool.  
+
+
+
+
+{\ttfamily \#include $<$buf\-Hash\-Tbl.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbadgerdb_1_1BufHashTbl_a3928e864b3739c5772020c3eb3edec7c}{Buf\-Hash\-Tbl} (const int ht\-Size)
+\item 
+\hyperlink{classbadgerdb_1_1BufHashTbl_afc222773f09bf845230edb1702224ec6}{$\sim$\-Buf\-Hash\-Tbl} ()
+\item 
+void \hyperlink{classbadgerdb_1_1BufHashTbl_a92480d460ddb07e8b04ab7f99107e334}{insert} (const \hyperlink{classbadgerdb_1_1File}{File} $\ast$file, const \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} page\-No, const \hyperlink{namespacebadgerdb_a1e7378fbefaea050a47e6cde929e9c01}{Frame\-Id} frame\-No)
+\item 
+bool \hyperlink{classbadgerdb_1_1BufHashTbl_a624a492b871319e8b10775601588db84}{lookup} (const \hyperlink{classbadgerdb_1_1File}{File} $\ast$file, const \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} page\-No, \hyperlink{namespacebadgerdb_a1e7378fbefaea050a47e6cde929e9c01}{Frame\-Id} \&frame\-No)
+\item 
+void \hyperlink{classbadgerdb_1_1BufHashTbl_a5739cc2b22c74d62e25c9d3d316144d8}{remove} (const \hyperlink{classbadgerdb_1_1File}{File} $\ast$file, const \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} page\-No)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Hash table class to keep track of pages in the buffer pool. 
+
+\begin{DoxyWarning}{Warning}
+This class is not threadsafe. 
+\end{DoxyWarning}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classbadgerdb_1_1BufHashTbl_a3928e864b3739c5772020c3eb3edec7c}{\index{badgerdb\-::\-Buf\-Hash\-Tbl@{badgerdb\-::\-Buf\-Hash\-Tbl}!Buf\-Hash\-Tbl@{Buf\-Hash\-Tbl}}
+\index{Buf\-Hash\-Tbl@{Buf\-Hash\-Tbl}!badgerdb::BufHashTbl@{badgerdb\-::\-Buf\-Hash\-Tbl}}
+\subsubsection[{Buf\-Hash\-Tbl}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-Buf\-Hash\-Tbl\-::\-Buf\-Hash\-Tbl (
+\begin{DoxyParamCaption}
+\item[{const int}]{ht\-Size}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufHashTbl_a3928e864b3739c5772020c3eb3edec7c}
+Constructor of \hyperlink{classbadgerdb_1_1BufHashTbl}{Buf\-Hash\-Tbl} class \hypertarget{classbadgerdb_1_1BufHashTbl_afc222773f09bf845230edb1702224ec6}{\index{badgerdb\-::\-Buf\-Hash\-Tbl@{badgerdb\-::\-Buf\-Hash\-Tbl}!$\sim$\-Buf\-Hash\-Tbl@{$\sim$\-Buf\-Hash\-Tbl}}
+\index{$\sim$\-Buf\-Hash\-Tbl@{$\sim$\-Buf\-Hash\-Tbl}!badgerdb::BufHashTbl@{badgerdb\-::\-Buf\-Hash\-Tbl}}
+\subsubsection[{$\sim$\-Buf\-Hash\-Tbl}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-Buf\-Hash\-Tbl\-::$\sim$\-Buf\-Hash\-Tbl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufHashTbl_afc222773f09bf845230edb1702224ec6}
+Destructor of \hyperlink{classbadgerdb_1_1BufHashTbl}{Buf\-Hash\-Tbl} class 
+
+\subsection{Member Function Documentation}
+\hypertarget{classbadgerdb_1_1BufHashTbl_a92480d460ddb07e8b04ab7f99107e334}{\index{badgerdb\-::\-Buf\-Hash\-Tbl@{badgerdb\-::\-Buf\-Hash\-Tbl}!insert@{insert}}
+\index{insert@{insert}!badgerdb::BufHashTbl@{badgerdb\-::\-Buf\-Hash\-Tbl}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Buf\-Hash\-Tbl\-::insert (
+\begin{DoxyParamCaption}
+\item[{const {\bf File} $\ast$}]{file, }
+\item[{const {\bf Page\-Id}}]{page\-No, }
+\item[{const {\bf Frame\-Id}}]{frame\-No}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufHashTbl_a92480d460ddb07e8b04ab7f99107e334}
+Insert entry into hash table mapping (file, page\-No) to frame\-No.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \hyperlink{classbadgerdb_1_1File}{File} object \\
+\hline
+{\em page\-No} & \hyperlink{classbadgerdb_1_1Page}{Page} number in the file \\
+\hline
+{\em frame\-No} & Frame number assigned to that page of the file \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Hash\-Already\-Present\-Exception} & if the corresponding page already exists in the hash table \\
+\hline
+{\em Hash\-Table\-Exception} & (optional) if could not create a new bucket as running of memory \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classbadgerdb_1_1BufHashTbl_a624a492b871319e8b10775601588db84}{\index{badgerdb\-::\-Buf\-Hash\-Tbl@{badgerdb\-::\-Buf\-Hash\-Tbl}!lookup@{lookup}}
+\index{lookup@{lookup}!badgerdb::BufHashTbl@{badgerdb\-::\-Buf\-Hash\-Tbl}}
+\subsubsection[{lookup}]{\setlength{\rightskip}{0pt plus 5cm}bool badgerdb\-::\-Buf\-Hash\-Tbl\-::lookup (
+\begin{DoxyParamCaption}
+\item[{const {\bf File} $\ast$}]{file, }
+\item[{const {\bf Page\-Id}}]{page\-No, }
+\item[{{\bf Frame\-Id} \&}]{frame\-No}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufHashTbl_a624a492b871319e8b10775601588db84}
+Check if (file, page\-No) is currently in the buffer pool (ie. in the hash table). If so, assign the value to frame\-No and return true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \hyperlink{classbadgerdb_1_1File}{File} object \\
+\hline
+{\em page\-No} & \hyperlink{classbadgerdb_1_1Page}{Page} number in the file \\
+\hline
+{\em frame\-No} & Frame number reference that is assigned if (file, page\-No) is present \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if (file, page\-No) is present. Else false. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1BufHashTbl_a5739cc2b22c74d62e25c9d3d316144d8}{\index{badgerdb\-::\-Buf\-Hash\-Tbl@{badgerdb\-::\-Buf\-Hash\-Tbl}!remove@{remove}}
+\index{remove@{remove}!badgerdb::BufHashTbl@{badgerdb\-::\-Buf\-Hash\-Tbl}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Buf\-Hash\-Tbl\-::remove (
+\begin{DoxyParamCaption}
+\item[{const {\bf File} $\ast$}]{file, }
+\item[{const {\bf Page\-Id}}]{page\-No}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufHashTbl_a5739cc2b22c74d62e25c9d3d316144d8}
+Delete entry (file,page\-No) from hash table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \hyperlink{classbadgerdb_1_1File}{File} object \\
+\hline
+{\em page\-No} & \hyperlink{classbadgerdb_1_1Page}{Page} number in the file \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Hash\-Not\-Found\-Exception} & if the page entry is not found in the hash table \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+buf\-Hash\-Tbl.\-h\item 
+buf\-Hash\-Tbl.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,123 @@
+\hypertarget{classbadgerdb_1_1FileIterator}{\section{badgerdb\-:\-:File\-Iterator Class Reference}
+\label{classbadgerdb_1_1FileIterator}\index{badgerdb\-::\-File\-Iterator@{badgerdb\-::\-File\-Iterator}}
+}
+
+
+Iterator for iterating over the pages in a file.  
+
+
+
+
+{\ttfamily \#include $<$file\-\_\-iterator.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbadgerdb_1_1FileIterator_a99bd5c0e0fac0493f9664409219ca88e}{File\-Iterator} ()
+\item 
+\hyperlink{classbadgerdb_1_1FileIterator_ad286fc916be769b1bea154603b83ece0}{File\-Iterator} (\hyperlink{classbadgerdb_1_1File}{File} $\ast$file)
+\item 
+\hyperlink{classbadgerdb_1_1FileIterator_afabd7eecd315a85f9eb602f71c6f88e3}{File\-Iterator} (\hyperlink{classbadgerdb_1_1File}{File} $\ast$file, \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} page\-\_\-number)
+\item 
+\hyperlink{classbadgerdb_1_1FileIterator}{File\-Iterator} \& \hyperlink{classbadgerdb_1_1FileIterator_a6fa0f1cef8b46bb933ce6f000276ab52}{operator++} ()
+\item 
+\hypertarget{classbadgerdb_1_1FileIterator_a997a4dc0a213e33384f82891135e41ec}{\hyperlink{classbadgerdb_1_1FileIterator}{File\-Iterator} {\bfseries operator++} (int)}\label{classbadgerdb_1_1FileIterator_a997a4dc0a213e33384f82891135e41ec}
+
+\item 
+bool \hyperlink{classbadgerdb_1_1FileIterator_a373f648963527f2dd259980434686645}{operator==} (const \hyperlink{classbadgerdb_1_1FileIterator}{File\-Iterator} \&rhs) const 
+\item 
+\hypertarget{classbadgerdb_1_1FileIterator_a9e1a5e7e5c0b2cc2861e7b3bf856739a}{bool {\bfseries operator!=} (const \hyperlink{classbadgerdb_1_1FileIterator}{File\-Iterator} \&rhs) const }\label{classbadgerdb_1_1FileIterator_a9e1a5e7e5c0b2cc2861e7b3bf856739a}
+
+\item 
+\hyperlink{classbadgerdb_1_1Page}{Page} \hyperlink{classbadgerdb_1_1FileIterator_a425810cc9834e0a3c97da76cd0a6b10a}{operator$\ast$} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Iterator for iterating over the pages in a file. 
+
+This class provides a forward-\/only iterator for iterating over all of the pages in a file. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classbadgerdb_1_1FileIterator_a99bd5c0e0fac0493f9664409219ca88e}{\index{badgerdb\-::\-File\-Iterator@{badgerdb\-::\-File\-Iterator}!File\-Iterator@{File\-Iterator}}
+\index{File\-Iterator@{File\-Iterator}!badgerdb::FileIterator@{badgerdb\-::\-File\-Iterator}}
+\subsubsection[{File\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-File\-Iterator\-::\-File\-Iterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1FileIterator_a99bd5c0e0fac0493f9664409219ca88e}
+Constructs an empty iterator. \hypertarget{classbadgerdb_1_1FileIterator_ad286fc916be769b1bea154603b83ece0}{\index{badgerdb\-::\-File\-Iterator@{badgerdb\-::\-File\-Iterator}!File\-Iterator@{File\-Iterator}}
+\index{File\-Iterator@{File\-Iterator}!badgerdb::FileIterator@{badgerdb\-::\-File\-Iterator}}
+\subsubsection[{File\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-File\-Iterator\-::\-File\-Iterator (
+\begin{DoxyParamCaption}
+\item[{{\bf File} $\ast$}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1FileIterator_ad286fc916be769b1bea154603b83ece0}
+Constructors an iterator over the pages in a file, starting at the first page.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \hyperlink{classbadgerdb_1_1File}{File} to iterate over. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbadgerdb_1_1FileIterator_afabd7eecd315a85f9eb602f71c6f88e3}{\index{badgerdb\-::\-File\-Iterator@{badgerdb\-::\-File\-Iterator}!File\-Iterator@{File\-Iterator}}
+\index{File\-Iterator@{File\-Iterator}!badgerdb::FileIterator@{badgerdb\-::\-File\-Iterator}}
+\subsubsection[{File\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-File\-Iterator\-::\-File\-Iterator (
+\begin{DoxyParamCaption}
+\item[{{\bf File} $\ast$}]{file, }
+\item[{{\bf Page\-Id}}]{page\-\_\-number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1FileIterator_afabd7eecd315a85f9eb602f71c6f88e3}
+Constructs an iterator over the pages in a file, starting at the given page number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \hyperlink{classbadgerdb_1_1File}{File} to iterate over. \\
+\hline
+{\em page\-\_\-number} & Number of page to start iterator at. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classbadgerdb_1_1FileIterator_a425810cc9834e0a3c97da76cd0a6b10a}{\index{badgerdb\-::\-File\-Iterator@{badgerdb\-::\-File\-Iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!badgerdb::FileIterator@{badgerdb\-::\-File\-Iterator}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page} badgerdb\-::\-File\-Iterator\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1FileIterator_a425810cc9834e0a3c97da76cd0a6b10a}
+Dereferences the iterator, returning a copy of the current page in the file.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classbadgerdb_1_1Page}{Page} in file. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1FileIterator_a6fa0f1cef8b46bb933ce6f000276ab52}{\index{badgerdb\-::\-File\-Iterator@{badgerdb\-::\-File\-Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!badgerdb::FileIterator@{badgerdb\-::\-File\-Iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File\-Iterator}\& badgerdb\-::\-File\-Iterator\-::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1FileIterator_a6fa0f1cef8b46bb933ce6f000276ab52}
+Advances the iterator to the next page in the file. \hypertarget{classbadgerdb_1_1FileIterator_a373f648963527f2dd259980434686645}{\index{badgerdb\-::\-File\-Iterator@{badgerdb\-::\-File\-Iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!badgerdb::FileIterator@{badgerdb\-::\-File\-Iterator}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool badgerdb\-::\-File\-Iterator\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf File\-Iterator} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1FileIterator_a373f648963527f2dd259980434686645}
+Returns true if this iterator is equal to the given iterator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Iterator to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if other iterator is equal to this one. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+file\-\_\-iterator.\-h\end{DoxyCompactItemize}

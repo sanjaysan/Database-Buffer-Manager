@@ -1,0 +1,41 @@
+\hypertarget{structbadgerdb_1_1PageSlot}{\section{badgerdb\-:\-:Page\-Slot Struct Reference}
+\label{structbadgerdb_1_1PageSlot}\index{badgerdb\-::\-Page\-Slot@{badgerdb\-::\-Page\-Slot}}
+}
+
+
+Slot metadata that tracks where a record is in the data space.  
+
+
+
+
+{\ttfamily \#include $<$page.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structbadgerdb_1_1PageSlot_a4ea5ad6e73525244bb368181f21fd018}{used}
+\item 
+std\-::uint16\-\_\-t \hyperlink{structbadgerdb_1_1PageSlot_a81c14b0e942b0d59e6ac31667d958b79}{item\-\_\-offset}
+\item 
+std\-::uint16\-\_\-t \hyperlink{structbadgerdb_1_1PageSlot_a675118fb03cd9e1b35970a1f10bda9d8}{item\-\_\-length}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Slot metadata that tracks where a record is in the data space. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structbadgerdb_1_1PageSlot_a675118fb03cd9e1b35970a1f10bda9d8}{\index{badgerdb\-::\-Page\-Slot@{badgerdb\-::\-Page\-Slot}!item\-\_\-length@{item\-\_\-length}}
+\index{item\-\_\-length@{item\-\_\-length}!badgerdb::PageSlot@{badgerdb\-::\-Page\-Slot}}
+\subsubsection[{item\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}std\-::uint16\-\_\-t badgerdb\-::\-Page\-Slot\-::item\-\_\-length}}\label{structbadgerdb_1_1PageSlot_a675118fb03cd9e1b35970a1f10bda9d8}
+Length of the data item in this slot. \hypertarget{structbadgerdb_1_1PageSlot_a81c14b0e942b0d59e6ac31667d958b79}{\index{badgerdb\-::\-Page\-Slot@{badgerdb\-::\-Page\-Slot}!item\-\_\-offset@{item\-\_\-offset}}
+\index{item\-\_\-offset@{item\-\_\-offset}!badgerdb::PageSlot@{badgerdb\-::\-Page\-Slot}}
+\subsubsection[{item\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}std\-::uint16\-\_\-t badgerdb\-::\-Page\-Slot\-::item\-\_\-offset}}\label{structbadgerdb_1_1PageSlot_a81c14b0e942b0d59e6ac31667d958b79}
+Offset of the data item in the page. \hypertarget{structbadgerdb_1_1PageSlot_a4ea5ad6e73525244bb368181f21fd018}{\index{badgerdb\-::\-Page\-Slot@{badgerdb\-::\-Page\-Slot}!used@{used}}
+\index{used@{used}!badgerdb::PageSlot@{badgerdb\-::\-Page\-Slot}}
+\subsubsection[{used}]{\setlength{\rightskip}{0pt plus 5cm}bool badgerdb\-::\-Page\-Slot\-::used}}\label{structbadgerdb_1_1PageSlot_a4ea5ad6e73525244bb368181f21fd018}
+Whether the slot currently holds data. May be false if this slot's record has been deleted after insertion. 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+page.\-h\end{DoxyCompactItemize}

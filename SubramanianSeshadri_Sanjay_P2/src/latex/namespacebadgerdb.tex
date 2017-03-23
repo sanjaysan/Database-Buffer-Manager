@@ -1,0 +1,52 @@
+\hypertarget{namespacebadgerdb}{\section{badgerdb Namespace Reference}
+\label{namespacebadgerdb}\index{badgerdb@{badgerdb}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classbadgerdb_1_1BufDesc}{Buf\-Desc}
+\begin{DoxyCompactList}\small\item\em Class for maintaining information about buffer pool frames. \end{DoxyCompactList}\item 
+struct \hyperlink{structbadgerdb_1_1BufStats}{Buf\-Stats}
+\begin{DoxyCompactList}\small\item\em Class to maintain statistics of buffer usage. \end{DoxyCompactList}\item 
+class \hyperlink{classbadgerdb_1_1BufMgr}{Buf\-Mgr}
+\begin{DoxyCompactList}\small\item\em The central class which manages the buffer pool including frame allocation and deallocation to pages in the file. \end{DoxyCompactList}\item 
+struct \hyperlink{structbadgerdb_1_1hashBucket}{hash\-Bucket}
+\begin{DoxyCompactList}\small\item\em Declarations for buffer pool hash table. \end{DoxyCompactList}\item 
+class \hyperlink{classbadgerdb_1_1BufHashTbl}{Buf\-Hash\-Tbl}
+\begin{DoxyCompactList}\small\item\em Hash table class to keep track of pages in the buffer pool. \end{DoxyCompactList}\item 
+struct \hyperlink{structbadgerdb_1_1FileHeader}{File\-Header}
+\begin{DoxyCompactList}\small\item\em Header metadata for files on disk which contain pages. \end{DoxyCompactList}\item 
+class \hyperlink{classbadgerdb_1_1File}{File}
+\begin{DoxyCompactList}\small\item\em Class which represents a file in the filesystem containing database pages. \end{DoxyCompactList}\item 
+class \hyperlink{classbadgerdb_1_1FileIterator}{File\-Iterator}
+\begin{DoxyCompactList}\small\item\em Iterator for iterating over the pages in a file. \end{DoxyCompactList}\item 
+struct \hyperlink{structbadgerdb_1_1PageHeader}{Page\-Header}
+\begin{DoxyCompactList}\small\item\em Header metadata in a page. \end{DoxyCompactList}\item 
+struct \hyperlink{structbadgerdb_1_1PageSlot}{Page\-Slot}
+\begin{DoxyCompactList}\small\item\em Slot metadata that tracks where a record is in the data space. \end{DoxyCompactList}\item 
+class \hyperlink{classbadgerdb_1_1Page}{Page}
+\begin{DoxyCompactList}\small\item\em Class which represents a fixed-\/size database page containing records. \end{DoxyCompactList}\item 
+class \hyperlink{classbadgerdb_1_1PageIterator}{Page\-Iterator}
+\begin{DoxyCompactList}\small\item\em Iterator for iterating over the records in a page. \end{DoxyCompactList}\item 
+struct \hyperlink{structbadgerdb_1_1RecordId}{Record\-Id}
+\begin{DoxyCompactList}\small\item\em Identifier for a record in a page. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{typedef std\-::uint32\-\_\-t \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id}}\label{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}
+
+\begin{DoxyCompactList}\small\item\em Identifier for a page in a file. \end{DoxyCompactList}\item 
+\hypertarget{namespacebadgerdb_afe9f2f985e7c67e04f76a16f7c4500c8}{typedef std\-::uint16\-\_\-t \hyperlink{namespacebadgerdb_afe9f2f985e7c67e04f76a16f7c4500c8}{Slot\-Id}}\label{namespacebadgerdb_afe9f2f985e7c67e04f76a16f7c4500c8}
+
+\begin{DoxyCompactList}\small\item\em Identifier for a slot in a page. \end{DoxyCompactList}\item 
+\hypertarget{namespacebadgerdb_a1e7378fbefaea050a47e6cde929e9c01}{typedef std\-::uint32\-\_\-t \hyperlink{namespacebadgerdb_a1e7378fbefaea050a47e6cde929e9c01}{Frame\-Id}}\label{namespacebadgerdb_a1e7378fbefaea050a47e6cde929e9c01}
+
+\begin{DoxyCompactList}\small\item\em Identifier for a frame in buffer pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+See Contributors.\-txt for code contributors and overview of Badger\-D\-B.
+\end{DoxyAuthor}
+\hypertarget{namespacebadgerdb_LICENSE}{}\subsection{L\-I\-C\-E\-N\-S\-E}\label{namespacebadgerdb_LICENSE}
+Copyright (c) 2012 Database Group, Computer Sciences Department, University of Wisconsin-\/\-Madison. 

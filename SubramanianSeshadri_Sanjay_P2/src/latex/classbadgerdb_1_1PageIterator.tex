@@ -1,0 +1,142 @@
+\hypertarget{classbadgerdb_1_1PageIterator}{\section{badgerdb\-:\-:Page\-Iterator Class Reference}
+\label{classbadgerdb_1_1PageIterator}\index{badgerdb\-::\-Page\-Iterator@{badgerdb\-::\-Page\-Iterator}}
+}
+
+
+Iterator for iterating over the records in a page.  
+
+
+
+
+{\ttfamily \#include $<$page\-\_\-iterator.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbadgerdb_1_1PageIterator_a612d51abd634209c03d672f1328bbc62}{Page\-Iterator} ()
+\item 
+\hyperlink{classbadgerdb_1_1PageIterator_a53cb54740042b01a78a0b033d8309d4a}{Page\-Iterator} (\hyperlink{classbadgerdb_1_1Page}{Page} $\ast$page)
+\item 
+\hyperlink{classbadgerdb_1_1PageIterator_ad376a4999169f299874aa85252bca71b}{Page\-Iterator} (\hyperlink{classbadgerdb_1_1Page}{Page} $\ast$page, const \hyperlink{structbadgerdb_1_1RecordId}{Record\-Id} \&record\-\_\-id)
+\item 
+\hyperlink{classbadgerdb_1_1PageIterator}{Page\-Iterator} \& \hyperlink{classbadgerdb_1_1PageIterator_a2e63f3eea97170b2c566d1549a2215f0}{operator++} ()
+\item 
+\hypertarget{classbadgerdb_1_1PageIterator_a194774a9a788030f70b166e8c16b11ed}{\hyperlink{classbadgerdb_1_1PageIterator}{Page\-Iterator} {\bfseries operator++} (int)}\label{classbadgerdb_1_1PageIterator_a194774a9a788030f70b166e8c16b11ed}
+
+\item 
+bool \hyperlink{classbadgerdb_1_1PageIterator_a1111e07de5972ffd9244e312ac938dac}{operator==} (const \hyperlink{classbadgerdb_1_1PageIterator}{Page\-Iterator} \&rhs) const 
+\item 
+\hypertarget{classbadgerdb_1_1PageIterator_a44ba172fd75fd065aec5e7004952324d}{bool {\bfseries operator!=} (const \hyperlink{classbadgerdb_1_1PageIterator}{Page\-Iterator} \&rhs) const }\label{classbadgerdb_1_1PageIterator_a44ba172fd75fd065aec5e7004952324d}
+
+\item 
+std\-::string \hyperlink{classbadgerdb_1_1PageIterator_a5e9f06b5a70663086720fd919a5b6bdb}{operator$\ast$} () const 
+\item 
+\hyperlink{namespacebadgerdb_afe9f2f985e7c67e04f76a16f7c4500c8}{Slot\-Id} \hyperlink{classbadgerdb_1_1PageIterator_a7b5eb61bcd7305f0aaa21e0f31d2f917}{get\-Next\-Used\-Slot} (const \hyperlink{namespacebadgerdb_afe9f2f985e7c67e04f76a16f7c4500c8}{Slot\-Id} start) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Iterator for iterating over the records in a page. 
+
+This class provides a forward-\/only iterator that iterates over all the records stored in a \hyperlink{classbadgerdb_1_1Page}{Page}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classbadgerdb_1_1PageIterator_a612d51abd634209c03d672f1328bbc62}{\index{badgerdb\-::\-Page\-Iterator@{badgerdb\-::\-Page\-Iterator}!Page\-Iterator@{Page\-Iterator}}
+\index{Page\-Iterator@{Page\-Iterator}!badgerdb::PageIterator@{badgerdb\-::\-Page\-Iterator}}
+\subsubsection[{Page\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-Page\-Iterator\-::\-Page\-Iterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1PageIterator_a612d51abd634209c03d672f1328bbc62}
+Constructs an empty iterator. \hypertarget{classbadgerdb_1_1PageIterator_a53cb54740042b01a78a0b033d8309d4a}{\index{badgerdb\-::\-Page\-Iterator@{badgerdb\-::\-Page\-Iterator}!Page\-Iterator@{Page\-Iterator}}
+\index{Page\-Iterator@{Page\-Iterator}!badgerdb::PageIterator@{badgerdb\-::\-Page\-Iterator}}
+\subsubsection[{Page\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-Page\-Iterator\-::\-Page\-Iterator (
+\begin{DoxyParamCaption}
+\item[{{\bf Page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1PageIterator_a53cb54740042b01a78a0b033d8309d4a}
+Constructors an iterator over the records in the given page, starting at the first record. \hyperlink{classbadgerdb_1_1Page}{Page} must not be null.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & \hyperlink{classbadgerdb_1_1Page}{Page} to iterate over. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbadgerdb_1_1PageIterator_ad376a4999169f299874aa85252bca71b}{\index{badgerdb\-::\-Page\-Iterator@{badgerdb\-::\-Page\-Iterator}!Page\-Iterator@{Page\-Iterator}}
+\index{Page\-Iterator@{Page\-Iterator}!badgerdb::PageIterator@{badgerdb\-::\-Page\-Iterator}}
+\subsubsection[{Page\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-Page\-Iterator\-::\-Page\-Iterator (
+\begin{DoxyParamCaption}
+\item[{{\bf Page} $\ast$}]{page, }
+\item[{const {\bf Record\-Id} \&}]{record\-\_\-id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1PageIterator_ad376a4999169f299874aa85252bca71b}
+Constructs an iterator over the records in the given page, starting at the given record.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & \hyperlink{classbadgerdb_1_1Page}{Page} to iterate over. \\
+\hline
+{\em record\-\_\-id} & I\-D of record to start iterator at. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classbadgerdb_1_1PageIterator_a7b5eb61bcd7305f0aaa21e0f31d2f917}{\index{badgerdb\-::\-Page\-Iterator@{badgerdb\-::\-Page\-Iterator}!get\-Next\-Used\-Slot@{get\-Next\-Used\-Slot}}
+\index{get\-Next\-Used\-Slot@{get\-Next\-Used\-Slot}!badgerdb::PageIterator@{badgerdb\-::\-Page\-Iterator}}
+\subsubsection[{get\-Next\-Used\-Slot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Slot\-Id} badgerdb\-::\-Page\-Iterator\-::get\-Next\-Used\-Slot (
+\begin{DoxyParamCaption}
+\item[{const {\bf Slot\-Id}}]{start}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1PageIterator_a7b5eb61bcd7305f0aaa21e0f31d2f917}
+Returns the next used slot in the page after the given slot or \hyperlink{classbadgerdb_1_1Page_a4013fab43df72bc52931241575736353}{Page\-::\-I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-L\-O\-T} if no slots are used after the given slot.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Slot to start search at. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Next used slot after given slot or \hyperlink{classbadgerdb_1_1Page_a4013fab43df72bc52931241575736353}{Page\-::\-I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-L\-O\-T}. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1PageIterator_a5e9f06b5a70663086720fd919a5b6bdb}{\index{badgerdb\-::\-Page\-Iterator@{badgerdb\-::\-Page\-Iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!badgerdb::PageIterator@{badgerdb\-::\-Page\-Iterator}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string badgerdb\-::\-Page\-Iterator\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1PageIterator_a5e9f06b5a70663086720fd919a5b6bdb}
+Dereferences the iterator, returning a copy of the current record in the page.
+
+\begin{DoxyReturn}{Returns}
+Record in page. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1PageIterator_a2e63f3eea97170b2c566d1549a2215f0}{\index{badgerdb\-::\-Page\-Iterator@{badgerdb\-::\-Page\-Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!badgerdb::PageIterator@{badgerdb\-::\-Page\-Iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Iterator}\& badgerdb\-::\-Page\-Iterator\-::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1PageIterator_a2e63f3eea97170b2c566d1549a2215f0}
+Advances the iterator to the next record in the page. \hypertarget{classbadgerdb_1_1PageIterator_a1111e07de5972ffd9244e312ac938dac}{\index{badgerdb\-::\-Page\-Iterator@{badgerdb\-::\-Page\-Iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!badgerdb::PageIterator@{badgerdb\-::\-Page\-Iterator}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool badgerdb\-::\-Page\-Iterator\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Page\-Iterator} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1PageIterator_a1111e07de5972ffd9244e312ac938dac}
+Returns true if this iterator is equal to the given iterator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Iterator to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if other iterator is equal to this one. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+page\-\_\-iterator.\-h\end{DoxyCompactItemize}

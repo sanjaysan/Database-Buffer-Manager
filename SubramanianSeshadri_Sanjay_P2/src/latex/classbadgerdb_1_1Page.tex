@@ -1,0 +1,252 @@
+\hypertarget{classbadgerdb_1_1Page}{\section{badgerdb\-:\-:Page Class Reference}
+\label{classbadgerdb_1_1Page}\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}}
+}
+
+
+Class which represents a fixed-\/size database page containing records.  
+
+
+
+
+{\ttfamily \#include $<$page.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbadgerdb_1_1Page_a1e4a3930a92ed6e71ffd253cf224379a}{Page} ()
+\item 
+\hyperlink{structbadgerdb_1_1RecordId}{Record\-Id} \hyperlink{classbadgerdb_1_1Page_ad0b1e85fe7849fb767dd8c21a8053cf4}{insert\-Record} (const std\-::string \&record\-\_\-data)
+\item 
+std\-::string \hyperlink{classbadgerdb_1_1Page_a77b352920c3e66384317bbcdcd900d99}{get\-Record} (const \hyperlink{structbadgerdb_1_1RecordId}{Record\-Id} \&record\-\_\-id) const 
+\item 
+void \hyperlink{classbadgerdb_1_1Page_ae24e3f6076d6c0a18d4dd2014d540bab}{update\-Record} (const \hyperlink{structbadgerdb_1_1RecordId}{Record\-Id} \&record\-\_\-id, const std\-::string \&record\-\_\-data)
+\item 
+void \hyperlink{classbadgerdb_1_1Page_a1bc17754b4ed548f8520a6274b3a4202}{delete\-Record} (const \hyperlink{structbadgerdb_1_1RecordId}{Record\-Id} \&record\-\_\-id)
+\item 
+bool \hyperlink{classbadgerdb_1_1Page_a35bf91df5caa67a606681519740848b0}{has\-Space\-For\-Record} (const std\-::string \&record\-\_\-data) const 
+\item 
+std\-::uint16\-\_\-t \hyperlink{classbadgerdb_1_1Page_af3d324b5aae656030465e213e86e2070}{get\-Free\-Space} () const 
+\item 
+\hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} \hyperlink{classbadgerdb_1_1Page_af55a0b44876bff4d513bdbed8bc8c5a3}{page\-\_\-number} () const 
+\item 
+\hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} \hyperlink{classbadgerdb_1_1Page_a8050c219873e6b1d51aec2adbea8a507}{next\-\_\-page\-\_\-number} () const 
+\item 
+\hyperlink{classbadgerdb_1_1PageIterator}{Page\-Iterator} \hyperlink{classbadgerdb_1_1Page_aa0fdb281074cd60cb1f1d6ea6d620772}{begin} ()
+\item 
+\hyperlink{classbadgerdb_1_1PageIterator}{Page\-Iterator} \hyperlink{classbadgerdb_1_1Page_a8e78cba69bef682a5427932485da4608}{end} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\-::size\-\_\-t \hyperlink{classbadgerdb_1_1Page_ae92d52803502854f97309bae2c14ea55}{S\-I\-Z\-E} = 8192
+\item 
+static const std\-::size\-\_\-t \hyperlink{classbadgerdb_1_1Page_a74057ec71412352ef0aa5913bbebed25}{D\-A\-T\-A\-\_\-\-S\-I\-Z\-E} = \hyperlink{classbadgerdb_1_1Page_ae92d52803502854f97309bae2c14ea55}{S\-I\-Z\-E} -\/ sizeof(\hyperlink{structbadgerdb_1_1PageHeader}{Page\-Header})
+\item 
+static const \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} \hyperlink{classbadgerdb_1_1Page_a785a1e756d47fb7f8f3603a3fe8ffcef}{I\-N\-V\-A\-L\-I\-D\-\_\-\-N\-U\-M\-B\-E\-R} = 0
+\item 
+static const \hyperlink{namespacebadgerdb_afe9f2f985e7c67e04f76a16f7c4500c8}{Slot\-Id} \hyperlink{classbadgerdb_1_1Page_a4013fab43df72bc52931241575736353}{I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-L\-O\-T} = 0
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classbadgerdb_1_1Page_a68d15876ad188b7628261b12d0eac8aa}{class {\bfseries File}}\label{classbadgerdb_1_1Page_a68d15876ad188b7628261b12d0eac8aa}
+
+\item 
+\hypertarget{classbadgerdb_1_1Page_ae93be65f49fbfeb5716a90719b8c4cb7}{class {\bfseries Page\-Iterator}}\label{classbadgerdb_1_1Page_ae93be65f49fbfeb5716a90719b8c4cb7}
+
+\item 
+\hypertarget{classbadgerdb_1_1Page_a724e730c198a7a3d941f08f9653f8154}{class {\bfseries Page\-Test}}\label{classbadgerdb_1_1Page_a724e730c198a7a3d941f08f9653f8154}
+
+\item 
+\hypertarget{classbadgerdb_1_1Page_aaf5d48a87d5c9424661d35cc89243a13}{class {\bfseries Buffer\-Test}}\label{classbadgerdb_1_1Page_aaf5d48a87d5c9424661d35cc89243a13}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class which represents a fixed-\/size database page containing records. 
+
+A page is a fixed-\/size unit of data storage. Each page holds zero or more records, which consist of arbitrary binary data. Records are placed into slots and identified by a \hyperlink{structbadgerdb_1_1RecordId}{Record\-Id}. Although a record's actual contents may be moved on the page, accessing a record by its slot is consistent.
+
+\begin{DoxyWarning}{Warning}
+This class is not threadsafe. 
+\end{DoxyWarning}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classbadgerdb_1_1Page_a1e4a3930a92ed6e71ffd253cf224379a}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!Page@{Page}}
+\index{Page@{Page}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{Page}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-Page\-::\-Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1Page_a1e4a3930a92ed6e71ffd253cf224379a}
+Constructs a new, uninitialized page. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classbadgerdb_1_1Page_aa0fdb281074cd60cb1f1d6ea6d620772}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!begin@{begin}}
+\index{begin@{begin}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Iterator} badgerdb\-::\-Page\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1Page_aa0fdb281074cd60cb1f1d6ea6d620772}
+Returns an iterator at the first record in the page.
+
+\begin{DoxyReturn}{Returns}
+Iterator at first record of page. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1Page_a1bc17754b4ed548f8520a6274b3a4202}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!delete\-Record@{delete\-Record}}
+\index{delete\-Record@{delete\-Record}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{delete\-Record}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Page\-::delete\-Record (
+\begin{DoxyParamCaption}
+\item[{const {\bf Record\-Id} \&}]{record\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1Page_a1bc17754b4ed548f8520a6274b3a4202}
+Deletes the record with the given I\-D. \hyperlink{classbadgerdb_1_1Page}{Page} is compacted upon delete to ensure that data of all records is contiguous. Slot array is compacted if the slot deleted is at the end of the slot array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em record\-\_\-id} & I\-D of the record to delete. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbadgerdb_1_1Page_a8e78cba69bef682a5427932485da4608}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!end@{end}}
+\index{end@{end}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Iterator} badgerdb\-::\-Page\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1Page_a8e78cba69bef682a5427932485da4608}
+Returns an iterator representing the record after the last record in the page. This iterator should not be dereferenced.
+
+\begin{DoxyReturn}{Returns}
+Iterator representing record after the last record in the page. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1Page_af3d324b5aae656030465e213e86e2070}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!get\-Free\-Space@{get\-Free\-Space}}
+\index{get\-Free\-Space@{get\-Free\-Space}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{get\-Free\-Space}]{\setlength{\rightskip}{0pt plus 5cm}std\-::uint16\-\_\-t badgerdb\-::\-Page\-::get\-Free\-Space (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1Page_af3d324b5aae656030465e213e86e2070}
+Returns this page's free space in bytes.
+
+\begin{DoxyReturn}{Returns}
+Free space in bytes. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1Page_a77b352920c3e66384317bbcdcd900d99}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!get\-Record@{get\-Record}}
+\index{get\-Record@{get\-Record}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{get\-Record}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string badgerdb\-::\-Page\-::get\-Record (
+\begin{DoxyParamCaption}
+\item[{const {\bf Record\-Id} \&}]{record\-\_\-id}
+\end{DoxyParamCaption}
+) const}}\label{classbadgerdb_1_1Page_a77b352920c3e66384317bbcdcd900d99}
+Returns the record with the given I\-D. Returned data is a copy of what is stored on the page; use update\-Record to change it.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classbadgerdb_1_1Page_ae24e3f6076d6c0a18d4dd2014d540bab}{update\-Record} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em record\-\_\-id} & I\-D of the record to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The record. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1Page_a35bf91df5caa67a606681519740848b0}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!has\-Space\-For\-Record@{has\-Space\-For\-Record}}
+\index{has\-Space\-For\-Record@{has\-Space\-For\-Record}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{has\-Space\-For\-Record}]{\setlength{\rightskip}{0pt plus 5cm}bool badgerdb\-::\-Page\-::has\-Space\-For\-Record (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{record\-\_\-data}
+\end{DoxyParamCaption}
+) const}}\label{classbadgerdb_1_1Page_a35bf91df5caa67a606681519740848b0}
+Returns true if the page has enough free space to hold the given data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em record\-\_\-data} & Bytes that compose the record. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the page can hold the data. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1Page_ad0b1e85fe7849fb767dd8c21a8053cf4}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!insert\-Record@{insert\-Record}}
+\index{insert\-Record@{insert\-Record}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{insert\-Record}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Record\-Id} badgerdb\-::\-Page\-::insert\-Record (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{record\-\_\-data}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1Page_ad0b1e85fe7849fb767dd8c21a8053cf4}
+Inserts a new record into the page.
+
+
+\begin{DoxyParams}{Parameters}
+{\em record\-\_\-data} & Bytes that compose the record. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-D of the newly inserted record. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1Page_a8050c219873e6b1d51aec2adbea8a507}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!next\-\_\-page\-\_\-number@{next\-\_\-page\-\_\-number}}
+\index{next\-\_\-page\-\_\-number@{next\-\_\-page\-\_\-number}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{next\-\_\-page\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Id} badgerdb\-::\-Page\-::next\-\_\-page\-\_\-number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1Page_a8050c219873e6b1d51aec2adbea8a507}
+Returns the number of the next used page this page in its file.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classbadgerdb_1_1Page}{Page} number of next used page in file. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1Page_af55a0b44876bff4d513bdbed8bc8c5a3}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!page\-\_\-number@{page\-\_\-number}}
+\index{page\-\_\-number@{page\-\_\-number}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{page\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Id} badgerdb\-::\-Page\-::page\-\_\-number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1Page_af55a0b44876bff4d513bdbed8bc8c5a3}
+Returns this page's number in its file.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classbadgerdb_1_1Page}{Page} number. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1Page_ae24e3f6076d6c0a18d4dd2014d540bab}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!update\-Record@{update\-Record}}
+\index{update\-Record@{update\-Record}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{update\-Record}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Page\-::update\-Record (
+\begin{DoxyParamCaption}
+\item[{const {\bf Record\-Id} \&}]{record\-\_\-id, }
+\item[{const std\-::string \&}]{record\-\_\-data}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1Page_ae24e3f6076d6c0a18d4dd2014d540bab}
+Updates the record with the given I\-D, replacing its data with a new version. This is equivalent to deleting the old record and inserting a new one, with the exception that the record I\-D will not change.
+
+
+\begin{DoxyParams}{Parameters}
+{\em record\-\_\-id} & I\-D of record to update. \\
+\hline
+{\em record\-\_\-data} & Updated bytes that compose the record. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classbadgerdb_1_1Page_a74057ec71412352ef0aa5913bbebed25}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!D\-A\-T\-A\-\_\-\-S\-I\-Z\-E@{D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}}
+\index{D\-A\-T\-A\-\_\-\-S\-I\-Z\-E@{D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::size\-\_\-t badgerdb\-::\-Page\-::\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E = {\bf S\-I\-Z\-E} -\/ sizeof({\bf Page\-Header})\hspace{0.3cm}{\ttfamily [static]}}}\label{classbadgerdb_1_1Page_a74057ec71412352ef0aa5913bbebed25}
+Size of page free space area in bytes. \hypertarget{classbadgerdb_1_1Page_a785a1e756d47fb7f8f3603a3fe8ffcef}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!I\-N\-V\-A\-L\-I\-D\-\_\-\-N\-U\-M\-B\-E\-R@{I\-N\-V\-A\-L\-I\-D\-\_\-\-N\-U\-M\-B\-E\-R}}
+\index{I\-N\-V\-A\-L\-I\-D\-\_\-\-N\-U\-M\-B\-E\-R@{I\-N\-V\-A\-L\-I\-D\-\_\-\-N\-U\-M\-B\-E\-R}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{I\-N\-V\-A\-L\-I\-D\-\_\-\-N\-U\-M\-B\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Page\-Id} badgerdb\-::\-Page\-::\-I\-N\-V\-A\-L\-I\-D\-\_\-\-N\-U\-M\-B\-E\-R = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classbadgerdb_1_1Page_a785a1e756d47fb7f8f3603a3fe8ffcef}
+Number of page indicating that it's invalid. \hypertarget{classbadgerdb_1_1Page_a4013fab43df72bc52931241575736353}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-L\-O\-T@{I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-L\-O\-T}}
+\index{I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-L\-O\-T@{I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-L\-O\-T}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-L\-O\-T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Slot\-Id} badgerdb\-::\-Page\-::\-I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-L\-O\-T = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classbadgerdb_1_1Page_a4013fab43df72bc52931241575736353}
+Number of slot indicating that it's invalid. \hypertarget{classbadgerdb_1_1Page_ae92d52803502854f97309bae2c14ea55}{\index{badgerdb\-::\-Page@{badgerdb\-::\-Page}!S\-I\-Z\-E@{S\-I\-Z\-E}}
+\index{S\-I\-Z\-E@{S\-I\-Z\-E}!badgerdb::Page@{badgerdb\-::\-Page}}
+\subsubsection[{S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::size\-\_\-t badgerdb\-::\-Page\-::\-S\-I\-Z\-E = 8192\hspace{0.3cm}{\ttfamily [static]}}}\label{classbadgerdb_1_1Page_ae92d52803502854f97309bae2c14ea55}
+\hyperlink{classbadgerdb_1_1Page}{Page} size in bytes. If this is changed, database files created with a different page size value will be unreadable by the resulting binaries. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+page.\-h\item 
+page.\-cpp\end{DoxyCompactItemize}

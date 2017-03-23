@@ -1,0 +1,71 @@
+\hypertarget{structbadgerdb_1_1FileHeader}{\section{badgerdb\-:\-:File\-Header Struct Reference}
+\label{structbadgerdb_1_1FileHeader}\index{badgerdb\-::\-File\-Header@{badgerdb\-::\-File\-Header}}
+}
+
+
+Header metadata for files on disk which contain pages.  
+
+
+
+
+{\ttfamily \#include $<$file.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structbadgerdb_1_1FileHeader_ae6439483acdb0eee52654c9c401793ca}{operator==} (const \hyperlink{structbadgerdb_1_1FileHeader}{File\-Header} \&rhs) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} \hyperlink{structbadgerdb_1_1FileHeader_aa1cfc5220c6795868c8301cec298c8a6}{num\-\_\-pages}
+\item 
+\hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} \hyperlink{structbadgerdb_1_1FileHeader_ad006b5b9d02b8c20e7ad5226680779c6}{first\-\_\-used\-\_\-page}
+\item 
+\hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} \hyperlink{structbadgerdb_1_1FileHeader_a07ac20f98d6aced3eb5358e0d4830abc}{num\-\_\-free\-\_\-pages}
+\item 
+\hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} \hyperlink{structbadgerdb_1_1FileHeader_aa86917d8554a42318c795471f32ad006}{first\-\_\-free\-\_\-page}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header metadata for files on disk which contain pages. 
+
+\subsection{Member Function Documentation}
+\hypertarget{structbadgerdb_1_1FileHeader_ae6439483acdb0eee52654c9c401793ca}{\index{badgerdb\-::\-File\-Header@{badgerdb\-::\-File\-Header}!operator==@{operator==}}
+\index{operator==@{operator==}!badgerdb::FileHeader@{badgerdb\-::\-File\-Header}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool badgerdb\-::\-File\-Header\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf File\-Header} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structbadgerdb_1_1FileHeader_ae6439483acdb0eee52654c9c401793ca}
+Returns true if this file header is equal to the other.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Other file header to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the other header is equal to this one. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structbadgerdb_1_1FileHeader_aa86917d8554a42318c795471f32ad006}{\index{badgerdb\-::\-File\-Header@{badgerdb\-::\-File\-Header}!first\-\_\-free\-\_\-page@{first\-\_\-free\-\_\-page}}
+\index{first\-\_\-free\-\_\-page@{first\-\_\-free\-\_\-page}!badgerdb::FileHeader@{badgerdb\-::\-File\-Header}}
+\subsubsection[{first\-\_\-free\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Id} badgerdb\-::\-File\-Header\-::first\-\_\-free\-\_\-page}}\label{structbadgerdb_1_1FileHeader_aa86917d8554a42318c795471f32ad006}
+\hyperlink{classbadgerdb_1_1Page}{Page} number of the first free (allocated but unused) page in the file. \hypertarget{structbadgerdb_1_1FileHeader_ad006b5b9d02b8c20e7ad5226680779c6}{\index{badgerdb\-::\-File\-Header@{badgerdb\-::\-File\-Header}!first\-\_\-used\-\_\-page@{first\-\_\-used\-\_\-page}}
+\index{first\-\_\-used\-\_\-page@{first\-\_\-used\-\_\-page}!badgerdb::FileHeader@{badgerdb\-::\-File\-Header}}
+\subsubsection[{first\-\_\-used\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Id} badgerdb\-::\-File\-Header\-::first\-\_\-used\-\_\-page}}\label{structbadgerdb_1_1FileHeader_ad006b5b9d02b8c20e7ad5226680779c6}
+\hyperlink{classbadgerdb_1_1Page}{Page} number of the first used page in the file. \hypertarget{structbadgerdb_1_1FileHeader_a07ac20f98d6aced3eb5358e0d4830abc}{\index{badgerdb\-::\-File\-Header@{badgerdb\-::\-File\-Header}!num\-\_\-free\-\_\-pages@{num\-\_\-free\-\_\-pages}}
+\index{num\-\_\-free\-\_\-pages@{num\-\_\-free\-\_\-pages}!badgerdb::FileHeader@{badgerdb\-::\-File\-Header}}
+\subsubsection[{num\-\_\-free\-\_\-pages}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Id} badgerdb\-::\-File\-Header\-::num\-\_\-free\-\_\-pages}}\label{structbadgerdb_1_1FileHeader_a07ac20f98d6aced3eb5358e0d4830abc}
+Number of free pages (allocated but unused) in the file. \hypertarget{structbadgerdb_1_1FileHeader_aa1cfc5220c6795868c8301cec298c8a6}{\index{badgerdb\-::\-File\-Header@{badgerdb\-::\-File\-Header}!num\-\_\-pages@{num\-\_\-pages}}
+\index{num\-\_\-pages@{num\-\_\-pages}!badgerdb::FileHeader@{badgerdb\-::\-File\-Header}}
+\subsubsection[{num\-\_\-pages}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Id} badgerdb\-::\-File\-Header\-::num\-\_\-pages}}\label{structbadgerdb_1_1FileHeader_aa1cfc5220c6795868c8301cec298c8a6}
+Number of pages allocated in the file. 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+file.\-h\end{DoxyCompactItemize}

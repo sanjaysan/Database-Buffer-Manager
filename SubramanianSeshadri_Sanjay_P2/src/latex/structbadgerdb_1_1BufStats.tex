@@ -1,0 +1,68 @@
+\hypertarget{structbadgerdb_1_1BufStats}{\section{badgerdb\-:\-:Buf\-Stats Struct Reference}
+\label{structbadgerdb_1_1BufStats}\index{badgerdb\-::\-Buf\-Stats@{badgerdb\-::\-Buf\-Stats}}
+}
+
+
+Class to maintain statistics of buffer usage.  
+
+
+
+
+{\ttfamily \#include $<$buffer.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structbadgerdb_1_1BufStats_a04a848e5458491fd3ea56133464cadbd}{clear} ()
+\item 
+\hyperlink{structbadgerdb_1_1BufStats_ad9848260b3b787f15eb1b960b0f8e769}{Buf\-Stats} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structbadgerdb_1_1BufStats_a3e7eb386ac728ed028bd2a8bb7960827}{accesses}
+\item 
+int \hyperlink{structbadgerdb_1_1BufStats_a60cde025ce745b6bc41a0ba27daf04e0}{diskreads}
+\item 
+int \hyperlink{structbadgerdb_1_1BufStats_a4bd2081fdaddaa309b401575eeb6a86e}{diskwrites}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to maintain statistics of buffer usage. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structbadgerdb_1_1BufStats_ad9848260b3b787f15eb1b960b0f8e769}{\index{badgerdb\-::\-Buf\-Stats@{badgerdb\-::\-Buf\-Stats}!Buf\-Stats@{Buf\-Stats}}
+\index{Buf\-Stats@{Buf\-Stats}!badgerdb::BufStats@{badgerdb\-::\-Buf\-Stats}}
+\subsubsection[{Buf\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-Buf\-Stats\-::\-Buf\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structbadgerdb_1_1BufStats_ad9848260b3b787f15eb1b960b0f8e769}
+Constructor of \hyperlink{structbadgerdb_1_1BufStats}{Buf\-Stats} class 
+
+\subsection{Member Function Documentation}
+\hypertarget{structbadgerdb_1_1BufStats_a04a848e5458491fd3ea56133464cadbd}{\index{badgerdb\-::\-Buf\-Stats@{badgerdb\-::\-Buf\-Stats}!clear@{clear}}
+\index{clear@{clear}!badgerdb::BufStats@{badgerdb\-::\-Buf\-Stats}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Buf\-Stats\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structbadgerdb_1_1BufStats_a04a848e5458491fd3ea56133464cadbd}
+Clear all values 
+
+\subsection{Member Data Documentation}
+\hypertarget{structbadgerdb_1_1BufStats_a3e7eb386ac728ed028bd2a8bb7960827}{\index{badgerdb\-::\-Buf\-Stats@{badgerdb\-::\-Buf\-Stats}!accesses@{accesses}}
+\index{accesses@{accesses}!badgerdb::BufStats@{badgerdb\-::\-Buf\-Stats}}
+\subsubsection[{accesses}]{\setlength{\rightskip}{0pt plus 5cm}int badgerdb\-::\-Buf\-Stats\-::accesses}}\label{structbadgerdb_1_1BufStats_a3e7eb386ac728ed028bd2a8bb7960827}
+Total number of accesses to buffer pool \hypertarget{structbadgerdb_1_1BufStats_a60cde025ce745b6bc41a0ba27daf04e0}{\index{badgerdb\-::\-Buf\-Stats@{badgerdb\-::\-Buf\-Stats}!diskreads@{diskreads}}
+\index{diskreads@{diskreads}!badgerdb::BufStats@{badgerdb\-::\-Buf\-Stats}}
+\subsubsection[{diskreads}]{\setlength{\rightskip}{0pt plus 5cm}int badgerdb\-::\-Buf\-Stats\-::diskreads}}\label{structbadgerdb_1_1BufStats_a60cde025ce745b6bc41a0ba27daf04e0}
+Number of pages read from disk (including allocs) \hypertarget{structbadgerdb_1_1BufStats_a4bd2081fdaddaa309b401575eeb6a86e}{\index{badgerdb\-::\-Buf\-Stats@{badgerdb\-::\-Buf\-Stats}!diskwrites@{diskwrites}}
+\index{diskwrites@{diskwrites}!badgerdb::BufStats@{badgerdb\-::\-Buf\-Stats}}
+\subsubsection[{diskwrites}]{\setlength{\rightskip}{0pt plus 5cm}int badgerdb\-::\-Buf\-Stats\-::diskwrites}}\label{structbadgerdb_1_1BufStats_a4bd2081fdaddaa309b401575eeb6a86e}
+Number of pages written back to disk 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+buffer.\-h\end{DoxyCompactItemize}

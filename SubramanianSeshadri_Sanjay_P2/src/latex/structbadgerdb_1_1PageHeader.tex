@@ -1,0 +1,83 @@
+\hypertarget{structbadgerdb_1_1PageHeader}{\section{badgerdb\-:\-:Page\-Header Struct Reference}
+\label{structbadgerdb_1_1PageHeader}\index{badgerdb\-::\-Page\-Header@{badgerdb\-::\-Page\-Header}}
+}
+
+
+Header metadata in a page.  
+
+
+
+
+{\ttfamily \#include $<$page.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structbadgerdb_1_1PageHeader_ab5ecd22f86e37705cd7f29bc57255586}{operator==} (const \hyperlink{structbadgerdb_1_1PageHeader}{Page\-Header} \&rhs) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::uint16\-\_\-t \hyperlink{structbadgerdb_1_1PageHeader_ac71c5a9b3b8644da0ea827f5bd4c5742}{free\-\_\-space\-\_\-lower\-\_\-bound}
+\item 
+std\-::uint16\-\_\-t \hyperlink{structbadgerdb_1_1PageHeader_a3af3c066d7651294fb3aae104f404648}{free\-\_\-space\-\_\-upper\-\_\-bound}
+\item 
+\hyperlink{namespacebadgerdb_afe9f2f985e7c67e04f76a16f7c4500c8}{Slot\-Id} \hyperlink{structbadgerdb_1_1PageHeader_a6c233369c611cfb617ba676e11a9d87d}{num\-\_\-slots}
+\item 
+\hyperlink{namespacebadgerdb_afe9f2f985e7c67e04f76a16f7c4500c8}{Slot\-Id} \hyperlink{structbadgerdb_1_1PageHeader_a7afd8d3c6f22b25e24958ebef773175e}{num\-\_\-free\-\_\-slots}
+\item 
+\hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} \hyperlink{structbadgerdb_1_1PageHeader_a3f721c5ce9ef491fdc9d12292f2f4498}{current\-\_\-page\-\_\-number}
+\item 
+\hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} \hyperlink{structbadgerdb_1_1PageHeader_a7cb8260dedb0748d3d75c4b1722dcf3c}{next\-\_\-page\-\_\-number}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header metadata in a page. 
+
+Header metadata in each page which tracks where space has been used and contains a pointer to the next page in the file. 
+
+\subsection{Member Function Documentation}
+\hypertarget{structbadgerdb_1_1PageHeader_ab5ecd22f86e37705cd7f29bc57255586}{\index{badgerdb\-::\-Page\-Header@{badgerdb\-::\-Page\-Header}!operator==@{operator==}}
+\index{operator==@{operator==}!badgerdb::PageHeader@{badgerdb\-::\-Page\-Header}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool badgerdb\-::\-Page\-Header\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Page\-Header} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structbadgerdb_1_1PageHeader_ab5ecd22f86e37705cd7f29bc57255586}
+Returns true if this page header is equal to the other.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Other page header to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the other header is equal to this one. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structbadgerdb_1_1PageHeader_a3f721c5ce9ef491fdc9d12292f2f4498}{\index{badgerdb\-::\-Page\-Header@{badgerdb\-::\-Page\-Header}!current\-\_\-page\-\_\-number@{current\-\_\-page\-\_\-number}}
+\index{current\-\_\-page\-\_\-number@{current\-\_\-page\-\_\-number}!badgerdb::PageHeader@{badgerdb\-::\-Page\-Header}}
+\subsubsection[{current\-\_\-page\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Id} badgerdb\-::\-Page\-Header\-::current\-\_\-page\-\_\-number}}\label{structbadgerdb_1_1PageHeader_a3f721c5ce9ef491fdc9d12292f2f4498}
+Number of the page within the file. \hypertarget{structbadgerdb_1_1PageHeader_ac71c5a9b3b8644da0ea827f5bd4c5742}{\index{badgerdb\-::\-Page\-Header@{badgerdb\-::\-Page\-Header}!free\-\_\-space\-\_\-lower\-\_\-bound@{free\-\_\-space\-\_\-lower\-\_\-bound}}
+\index{free\-\_\-space\-\_\-lower\-\_\-bound@{free\-\_\-space\-\_\-lower\-\_\-bound}!badgerdb::PageHeader@{badgerdb\-::\-Page\-Header}}
+\subsubsection[{free\-\_\-space\-\_\-lower\-\_\-bound}]{\setlength{\rightskip}{0pt plus 5cm}std\-::uint16\-\_\-t badgerdb\-::\-Page\-Header\-::free\-\_\-space\-\_\-lower\-\_\-bound}}\label{structbadgerdb_1_1PageHeader_ac71c5a9b3b8644da0ea827f5bd4c5742}
+Lower bound of the free space. This is the offset of the first unused byte after the slot array. \hypertarget{structbadgerdb_1_1PageHeader_a3af3c066d7651294fb3aae104f404648}{\index{badgerdb\-::\-Page\-Header@{badgerdb\-::\-Page\-Header}!free\-\_\-space\-\_\-upper\-\_\-bound@{free\-\_\-space\-\_\-upper\-\_\-bound}}
+\index{free\-\_\-space\-\_\-upper\-\_\-bound@{free\-\_\-space\-\_\-upper\-\_\-bound}!badgerdb::PageHeader@{badgerdb\-::\-Page\-Header}}
+\subsubsection[{free\-\_\-space\-\_\-upper\-\_\-bound}]{\setlength{\rightskip}{0pt plus 5cm}std\-::uint16\-\_\-t badgerdb\-::\-Page\-Header\-::free\-\_\-space\-\_\-upper\-\_\-bound}}\label{structbadgerdb_1_1PageHeader_a3af3c066d7651294fb3aae104f404648}
+Upper bound of the free space. This is the offset of the last unused byte before the first data record. \hypertarget{structbadgerdb_1_1PageHeader_a7cb8260dedb0748d3d75c4b1722dcf3c}{\index{badgerdb\-::\-Page\-Header@{badgerdb\-::\-Page\-Header}!next\-\_\-page\-\_\-number@{next\-\_\-page\-\_\-number}}
+\index{next\-\_\-page\-\_\-number@{next\-\_\-page\-\_\-number}!badgerdb::PageHeader@{badgerdb\-::\-Page\-Header}}
+\subsubsection[{next\-\_\-page\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Id} badgerdb\-::\-Page\-Header\-::next\-\_\-page\-\_\-number}}\label{structbadgerdb_1_1PageHeader_a7cb8260dedb0748d3d75c4b1722dcf3c}
+Number of the next used page in the file. \hypertarget{structbadgerdb_1_1PageHeader_a7afd8d3c6f22b25e24958ebef773175e}{\index{badgerdb\-::\-Page\-Header@{badgerdb\-::\-Page\-Header}!num\-\_\-free\-\_\-slots@{num\-\_\-free\-\_\-slots}}
+\index{num\-\_\-free\-\_\-slots@{num\-\_\-free\-\_\-slots}!badgerdb::PageHeader@{badgerdb\-::\-Page\-Header}}
+\subsubsection[{num\-\_\-free\-\_\-slots}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Slot\-Id} badgerdb\-::\-Page\-Header\-::num\-\_\-free\-\_\-slots}}\label{structbadgerdb_1_1PageHeader_a7afd8d3c6f22b25e24958ebef773175e}
+Number of slots allocated but not in use. \hypertarget{structbadgerdb_1_1PageHeader_a6c233369c611cfb617ba676e11a9d87d}{\index{badgerdb\-::\-Page\-Header@{badgerdb\-::\-Page\-Header}!num\-\_\-slots@{num\-\_\-slots}}
+\index{num\-\_\-slots@{num\-\_\-slots}!badgerdb::PageHeader@{badgerdb\-::\-Page\-Header}}
+\subsubsection[{num\-\_\-slots}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Slot\-Id} badgerdb\-::\-Page\-Header\-::num\-\_\-slots}}\label{structbadgerdb_1_1PageHeader_a6c233369c611cfb617ba676e11a9d87d}
+Number of slots currently allocated. This number may include slots which are unused but are in the middle of the slot array (due to record deletions). 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+page.\-h\end{DoxyCompactItemize}

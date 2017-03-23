@@ -1,0 +1,199 @@
+\hypertarget{classbadgerdb_1_1BufMgr}{\section{badgerdb\-:\-:Buf\-Mgr Class Reference}
+\label{classbadgerdb_1_1BufMgr}\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}}
+}
+
+
+The central class which manages the buffer pool including frame allocation and deallocation to pages in the file.  
+
+
+
+
+{\ttfamily \#include $<$buffer.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbadgerdb_1_1BufMgr_a18b7cf23b619c7c0e593d1dc45da77b4}{Buf\-Mgr} (std\-::uint32\-\_\-t bufs)
+\item 
+\hyperlink{classbadgerdb_1_1BufMgr_aab08001e1be18bfbd4af9113e91cf953}{$\sim$\-Buf\-Mgr} ()
+\item 
+void \hyperlink{classbadgerdb_1_1BufMgr_a9f853f0f1d4628e7e14374d0c7c6a4f3}{read\-Page} (\hyperlink{classbadgerdb_1_1File}{File} $\ast$file, const \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} Page\-No, \hyperlink{classbadgerdb_1_1Page}{Page} $\ast$\&page)
+\item 
+void \hyperlink{classbadgerdb_1_1BufMgr_aa9bdf04c8543f59744db22efa9420c89}{un\-Pin\-Page} (\hyperlink{classbadgerdb_1_1File}{File} $\ast$file, const \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} Page\-No, const bool dirty)
+\item 
+void \hyperlink{classbadgerdb_1_1BufMgr_ab9ae3b12aac55b119b5763e3de2a4d2b}{alloc\-Page} (\hyperlink{classbadgerdb_1_1File}{File} $\ast$file, \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} \&Page\-No, \hyperlink{classbadgerdb_1_1Page}{Page} $\ast$\&page)
+\item 
+void \hyperlink{classbadgerdb_1_1BufMgr_acc61d1985720411ebb76e70f702827d3}{flush\-File} (const \hyperlink{classbadgerdb_1_1File}{File} $\ast$file)
+\item 
+void \hyperlink{classbadgerdb_1_1BufMgr_a870a80a0f0abcf3b640b913b46b64486}{dispose\-Page} (\hyperlink{classbadgerdb_1_1File}{File} $\ast$file, const \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} Page\-No)
+\item 
+void \hyperlink{classbadgerdb_1_1BufMgr_a598b3112b8193af603f5bc97c478a671}{print\-Self} ()
+\item 
+\hyperlink{structbadgerdb_1_1BufStats}{Buf\-Stats} \& \hyperlink{classbadgerdb_1_1BufMgr_a93148e1af99f06f4f264d948920b7c1c}{get\-Buf\-Stats} ()
+\item 
+void \hyperlink{classbadgerdb_1_1BufMgr_a702a264ae946b334414e51700edd81a0}{clear\-Buf\-Stats} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbadgerdb_1_1Page}{Page} $\ast$ \hyperlink{classbadgerdb_1_1BufMgr_aa498047fc351652d0bc7eabf6cb62ab0}{buf\-Pool}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The central class which manages the buffer pool including frame allocation and deallocation to pages in the file. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classbadgerdb_1_1BufMgr_a18b7cf23b619c7c0e593d1dc45da77b4}{\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}!Buf\-Mgr@{Buf\-Mgr}}
+\index{Buf\-Mgr@{Buf\-Mgr}!badgerdb::BufMgr@{badgerdb\-::\-Buf\-Mgr}}
+\subsubsection[{Buf\-Mgr}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-Buf\-Mgr\-::\-Buf\-Mgr (
+\begin{DoxyParamCaption}
+\item[{std\-::uint32\-\_\-t}]{bufs}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufMgr_a18b7cf23b619c7c0e593d1dc45da77b4}
+Constructor of \hyperlink{classbadgerdb_1_1BufMgr}{Buf\-Mgr} class \hypertarget{classbadgerdb_1_1BufMgr_aab08001e1be18bfbd4af9113e91cf953}{\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}!$\sim$\-Buf\-Mgr@{$\sim$\-Buf\-Mgr}}
+\index{$\sim$\-Buf\-Mgr@{$\sim$\-Buf\-Mgr}!badgerdb::BufMgr@{badgerdb\-::\-Buf\-Mgr}}
+\subsubsection[{$\sim$\-Buf\-Mgr}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-Buf\-Mgr\-::$\sim$\-Buf\-Mgr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufMgr_aab08001e1be18bfbd4af9113e91cf953}
+Destructor of \hyperlink{classbadgerdb_1_1BufMgr}{Buf\-Mgr} class 
+
+\subsection{Member Function Documentation}
+\hypertarget{classbadgerdb_1_1BufMgr_ab9ae3b12aac55b119b5763e3de2a4d2b}{\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}!alloc\-Page@{alloc\-Page}}
+\index{alloc\-Page@{alloc\-Page}!badgerdb::BufMgr@{badgerdb\-::\-Buf\-Mgr}}
+\subsubsection[{alloc\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Buf\-Mgr\-::alloc\-Page (
+\begin{DoxyParamCaption}
+\item[{{\bf File} $\ast$}]{file, }
+\item[{{\bf Page\-Id} \&}]{Page\-No, }
+\item[{{\bf Page} $\ast$\&}]{page}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufMgr_ab9ae3b12aac55b119b5763e3de2a4d2b}
+Allocates a new, empty page in the file and returns the \hyperlink{classbadgerdb_1_1Page}{Page} object. The newly allocated page is also assigned a frame in the buffer pool.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \hyperlink{classbadgerdb_1_1File}{File} object \\
+\hline
+{\em Page\-No} & \hyperlink{classbadgerdb_1_1Page}{Page} number. The number assigned to the page in the file is returned via this reference. \\
+\hline
+{\em page} & Reference to page pointer. The newly allocated in-\/memory \hyperlink{classbadgerdb_1_1Page}{Page} object is returned via this reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbadgerdb_1_1BufMgr_a702a264ae946b334414e51700edd81a0}{\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}!clear\-Buf\-Stats@{clear\-Buf\-Stats}}
+\index{clear\-Buf\-Stats@{clear\-Buf\-Stats}!badgerdb::BufMgr@{badgerdb\-::\-Buf\-Mgr}}
+\subsubsection[{clear\-Buf\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Buf\-Mgr\-::clear\-Buf\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1BufMgr_a702a264ae946b334414e51700edd81a0}
+Clear buffer pool usage statistics \hypertarget{classbadgerdb_1_1BufMgr_a870a80a0f0abcf3b640b913b46b64486}{\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}!dispose\-Page@{dispose\-Page}}
+\index{dispose\-Page@{dispose\-Page}!badgerdb::BufMgr@{badgerdb\-::\-Buf\-Mgr}}
+\subsubsection[{dispose\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Buf\-Mgr\-::dispose\-Page (
+\begin{DoxyParamCaption}
+\item[{{\bf File} $\ast$}]{file, }
+\item[{const {\bf Page\-Id}}]{Page\-No}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufMgr_a870a80a0f0abcf3b640b913b46b64486}
+Delete page from file and also from buffer pool if present. Since the page is entirely deleted from file, its unnecessary to see if the page is dirty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \hyperlink{classbadgerdb_1_1File}{File} object \\
+\hline
+{\em Page\-No} & \hyperlink{classbadgerdb_1_1Page}{Page} number \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbadgerdb_1_1BufMgr_acc61d1985720411ebb76e70f702827d3}{\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}!flush\-File@{flush\-File}}
+\index{flush\-File@{flush\-File}!badgerdb::BufMgr@{badgerdb\-::\-Buf\-Mgr}}
+\subsubsection[{flush\-File}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Buf\-Mgr\-::flush\-File (
+\begin{DoxyParamCaption}
+\item[{const {\bf File} $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufMgr_acc61d1985720411ebb76e70f702827d3}
+Writes out all dirty pages of the file to disk. All the frames assigned to the file need to be unpinned from buffer pool before this function can be successfully called. Otherwise Error returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \hyperlink{classbadgerdb_1_1File}{File} object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Page\-Pinned\-Exception} & If any page of the file is pinned in the buffer pool \\
+\hline
+{\em Bad\-Buffer\-Exception} & If any frame allocated to the file is found to be invalid \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classbadgerdb_1_1BufMgr_a93148e1af99f06f4f264d948920b7c1c}{\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}!get\-Buf\-Stats@{get\-Buf\-Stats}}
+\index{get\-Buf\-Stats@{get\-Buf\-Stats}!badgerdb::BufMgr@{badgerdb\-::\-Buf\-Mgr}}
+\subsubsection[{get\-Buf\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buf\-Stats}\& badgerdb\-::\-Buf\-Mgr\-::get\-Buf\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1BufMgr_a93148e1af99f06f4f264d948920b7c1c}
+Get buffer pool usage statistics \hypertarget{classbadgerdb_1_1BufMgr_a598b3112b8193af603f5bc97c478a671}{\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}!print\-Self@{print\-Self}}
+\index{print\-Self@{print\-Self}!badgerdb::BufMgr@{badgerdb\-::\-Buf\-Mgr}}
+\subsubsection[{print\-Self}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Buf\-Mgr\-::print\-Self (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufMgr_a598b3112b8193af603f5bc97c478a671}
+Print member variable values. \hypertarget{classbadgerdb_1_1BufMgr_a9f853f0f1d4628e7e14374d0c7c6a4f3}{\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}!read\-Page@{read\-Page}}
+\index{read\-Page@{read\-Page}!badgerdb::BufMgr@{badgerdb\-::\-Buf\-Mgr}}
+\subsubsection[{read\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Buf\-Mgr\-::read\-Page (
+\begin{DoxyParamCaption}
+\item[{{\bf File} $\ast$}]{file, }
+\item[{const {\bf Page\-Id}}]{Page\-No, }
+\item[{{\bf Page} $\ast$\&}]{page}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufMgr_a9f853f0f1d4628e7e14374d0c7c6a4f3}
+Reads the given page from the file into a frame and returns the pointer to page. If the requested page is already present in the buffer pool pointer to that frame is returned otherwise a new frame is allocated from the buffer pool for reading the page.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \hyperlink{classbadgerdb_1_1File}{File} object \\
+\hline
+{\em Page\-No} & \hyperlink{classbadgerdb_1_1Page}{Page} number in the file to be read \\
+\hline
+{\em page} & Reference to page pointer. Used to fetch the \hyperlink{classbadgerdb_1_1Page}{Page} object in which requested page from file is read in. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbadgerdb_1_1BufMgr_aa9bdf04c8543f59744db22efa9420c89}{\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}!un\-Pin\-Page@{un\-Pin\-Page}}
+\index{un\-Pin\-Page@{un\-Pin\-Page}!badgerdb::BufMgr@{badgerdb\-::\-Buf\-Mgr}}
+\subsubsection[{un\-Pin\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-Buf\-Mgr\-::un\-Pin\-Page (
+\begin{DoxyParamCaption}
+\item[{{\bf File} $\ast$}]{file, }
+\item[{const {\bf Page\-Id}}]{Page\-No, }
+\item[{const bool}]{dirty}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1BufMgr_aa9bdf04c8543f59744db22efa9420c89}
+Unpin a page from memory since it is no longer required for it to remain in memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \hyperlink{classbadgerdb_1_1File}{File} object \\
+\hline
+{\em Page\-No} & \hyperlink{classbadgerdb_1_1Page}{Page} number \\
+\hline
+{\em dirty} & True if the page to be unpinned needs to be marked dirty \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Page\-Not\-Pinned\-Exception} & If the page is not already pinned \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classbadgerdb_1_1BufMgr_aa498047fc351652d0bc7eabf6cb62ab0}{\index{badgerdb\-::\-Buf\-Mgr@{badgerdb\-::\-Buf\-Mgr}!buf\-Pool@{buf\-Pool}}
+\index{buf\-Pool@{buf\-Pool}!badgerdb::BufMgr@{badgerdb\-::\-Buf\-Mgr}}
+\subsubsection[{buf\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page}$\ast$ badgerdb\-::\-Buf\-Mgr\-::buf\-Pool}}\label{classbadgerdb_1_1BufMgr_aa498047fc351652d0bc7eabf6cb62ab0}
+Actual buffer pool from which frames are allocated 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+buffer.\-h\item 
+buffer.\-cpp\end{DoxyCompactItemize}

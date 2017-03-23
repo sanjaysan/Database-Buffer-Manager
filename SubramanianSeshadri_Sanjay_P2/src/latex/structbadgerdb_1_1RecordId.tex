@@ -1,0 +1,80 @@
+\hypertarget{structbadgerdb_1_1RecordId}{\section{badgerdb\-:\-:Record\-Id Struct Reference}
+\label{structbadgerdb_1_1RecordId}\index{badgerdb\-::\-Record\-Id@{badgerdb\-::\-Record\-Id}}
+}
+
+
+Identifier for a record in a page.  
+
+
+
+
+{\ttfamily \#include $<$types.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structbadgerdb_1_1RecordId_a156dc24ebdd2ed2f8ce49b60326646c7}{operator==} (const \hyperlink{structbadgerdb_1_1RecordId}{Record\-Id} \&rhs) const 
+\item 
+bool \hyperlink{structbadgerdb_1_1RecordId_a0639e3a101d04340853a2b8eedccdf98}{operator!=} (const \hyperlink{structbadgerdb_1_1RecordId}{Record\-Id} \&rhs) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} \hyperlink{structbadgerdb_1_1RecordId_aca5e770e2726e51efed3a47c6457cd94}{page\-\_\-number}
+\item 
+\hyperlink{namespacebadgerdb_afe9f2f985e7c67e04f76a16f7c4500c8}{Slot\-Id} \hyperlink{structbadgerdb_1_1RecordId_a19ec7b749099499446fdd24d48cec9ef}{slot\-\_\-number}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Identifier for a record in a page. 
+
+\subsection{Member Function Documentation}
+\hypertarget{structbadgerdb_1_1RecordId_a0639e3a101d04340853a2b8eedccdf98}{\index{badgerdb\-::\-Record\-Id@{badgerdb\-::\-Record\-Id}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!badgerdb::RecordId@{badgerdb\-::\-Record\-Id}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool badgerdb\-::\-Record\-Id\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Record\-Id} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structbadgerdb_1_1RecordId_a0639e3a101d04340853a2b8eedccdf98}
+Returns true if this record I\-D is different from the record as the given I\-D.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Record I\-D to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the other I\-D is different from record as this one. 
+\end{DoxyReturn}
+\hypertarget{structbadgerdb_1_1RecordId_a156dc24ebdd2ed2f8ce49b60326646c7}{\index{badgerdb\-::\-Record\-Id@{badgerdb\-::\-Record\-Id}!operator==@{operator==}}
+\index{operator==@{operator==}!badgerdb::RecordId@{badgerdb\-::\-Record\-Id}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool badgerdb\-::\-Record\-Id\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Record\-Id} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structbadgerdb_1_1RecordId_a156dc24ebdd2ed2f8ce49b60326646c7}
+Returns true if this record I\-D refers to the same record as the given I\-D.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Record I\-D to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the other I\-D refers to the same record as this one. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structbadgerdb_1_1RecordId_aca5e770e2726e51efed3a47c6457cd94}{\index{badgerdb\-::\-Record\-Id@{badgerdb\-::\-Record\-Id}!page\-\_\-number@{page\-\_\-number}}
+\index{page\-\_\-number@{page\-\_\-number}!badgerdb::RecordId@{badgerdb\-::\-Record\-Id}}
+\subsubsection[{page\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Id} badgerdb\-::\-Record\-Id\-::page\-\_\-number}}\label{structbadgerdb_1_1RecordId_aca5e770e2726e51efed3a47c6457cd94}
+Number of page containing this record. \hypertarget{structbadgerdb_1_1RecordId_a19ec7b749099499446fdd24d48cec9ef}{\index{badgerdb\-::\-Record\-Id@{badgerdb\-::\-Record\-Id}!slot\-\_\-number@{slot\-\_\-number}}
+\index{slot\-\_\-number@{slot\-\_\-number}!badgerdb::RecordId@{badgerdb\-::\-Record\-Id}}
+\subsubsection[{slot\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Slot\-Id} badgerdb\-::\-Record\-Id\-::slot\-\_\-number}}\label{structbadgerdb_1_1RecordId_a19ec7b749099499446fdd24d48cec9ef}
+Number of slot within the page containing this record. 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+types.\-h\end{DoxyCompactItemize}

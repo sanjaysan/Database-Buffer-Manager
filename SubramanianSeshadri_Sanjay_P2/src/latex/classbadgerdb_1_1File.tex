@@ -1,0 +1,308 @@
+\hypertarget{classbadgerdb_1_1File}{\section{badgerdb\-:\-:File Class Reference}
+\label{classbadgerdb_1_1File}\index{badgerdb\-::\-File@{badgerdb\-::\-File}}
+}
+
+
+Class which represents a file in the filesystem containing database pages.  
+
+
+
+
+{\ttfamily \#include $<$file.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbadgerdb_1_1File_a600baaf77d18f39e51ae7473eca633c4}{File} (const \hyperlink{classbadgerdb_1_1File}{File} \&other)
+\item 
+\hyperlink{classbadgerdb_1_1File}{File} \& \hyperlink{classbadgerdb_1_1File_ac403c631aec085e9f12992f260a57155}{operator=} (const \hyperlink{classbadgerdb_1_1File}{File} \&rhs)
+\item 
+\hyperlink{classbadgerdb_1_1File_a97fd6e3ae8dd11be883289b69d560287}{$\sim$\-File} ()
+\item 
+\hyperlink{classbadgerdb_1_1Page}{Page} \hyperlink{classbadgerdb_1_1File_a7d0e047bcc8dc4cee36aac5b2060bbe3}{allocate\-Page} ()
+\item 
+\hyperlink{classbadgerdb_1_1Page}{Page} \hyperlink{classbadgerdb_1_1File_aba4762b533499b7b7cc0774192ead27c}{read\-Page} (const \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} page\-\_\-number) const 
+\item 
+void \hyperlink{classbadgerdb_1_1File_a9a1b3cc43c4631bde58c1c4f670e1036}{write\-Page} (const \hyperlink{classbadgerdb_1_1Page}{Page} \&new\-\_\-page)
+\item 
+void \hyperlink{classbadgerdb_1_1File_a829a68ccfbeb0c9f66f3a2db7e0b99fe}{delete\-Page} (const \hyperlink{namespacebadgerdb_a1f49e404293bf4240756b89b53b1587a}{Page\-Id} page\-\_\-number)
+\item 
+const std\-::string \& \hyperlink{classbadgerdb_1_1File_ac61ce3c2233fd1f7e2e2a8a5a7640936}{filename} () const 
+\item 
+\hyperlink{classbadgerdb_1_1FileIterator}{File\-Iterator} \hyperlink{classbadgerdb_1_1File_a32e94f392eb3740dd9eb9101b9e09d47}{begin} ()
+\item 
+\hyperlink{classbadgerdb_1_1FileIterator}{File\-Iterator} \hyperlink{classbadgerdb_1_1File_a01e224676a67634f21d53fc4189b8f11}{end} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classbadgerdb_1_1File}{File} \hyperlink{classbadgerdb_1_1File_a1fb708b45103a606f189850d6bf83a0c}{create} (const std\-::string \&\hyperlink{classbadgerdb_1_1File_ac61ce3c2233fd1f7e2e2a8a5a7640936}{filename})
+\item 
+static \hyperlink{classbadgerdb_1_1File}{File} \hyperlink{classbadgerdb_1_1File_a8462afdbd250c0a483ddfbde144c8732}{open} (const std\-::string \&\hyperlink{classbadgerdb_1_1File_ac61ce3c2233fd1f7e2e2a8a5a7640936}{filename})
+\item 
+static void \hyperlink{classbadgerdb_1_1File_a1cc69467366badbd68021ac76a91190e}{remove} (const std\-::string \&\hyperlink{classbadgerdb_1_1File_ac61ce3c2233fd1f7e2e2a8a5a7640936}{filename})
+\item 
+static bool \hyperlink{classbadgerdb_1_1File_a64836156a9bb5f81d2c2c4e6f3ada24d}{is\-Open} (const std\-::string \&\hyperlink{classbadgerdb_1_1File_ac61ce3c2233fd1f7e2e2a8a5a7640936}{filename})
+\item 
+static bool \hyperlink{classbadgerdb_1_1File_a864d59b12302c26b14967bd1d3e520bd}{exists} (const std\-::string \&\hyperlink{classbadgerdb_1_1File_ac61ce3c2233fd1f7e2e2a8a5a7640936}{filename})
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classbadgerdb_1_1File_a3cd56c83d638b63a676ae3c4b51dc1b2}{class {\bfseries File\-Iterator}}\label{classbadgerdb_1_1File_a3cd56c83d638b63a676ae3c4b51dc1b2}
+
+\item 
+\hypertarget{classbadgerdb_1_1File_a400f700afa1fdf03ca18d08ab8ade7f7}{class {\bfseries File\-Test}}\label{classbadgerdb_1_1File_a400f700afa1fdf03ca18d08ab8ade7f7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class which represents a file in the filesystem containing database pages. 
+
+The \hyperlink{classbadgerdb_1_1File}{File} class wraps a stream to an underlying file on disk. Files contain fixed-\/sized pages, and they never deallocate space (though they do reuse deleted pages if possible). If multiple \hyperlink{classbadgerdb_1_1File}{File} objects refer to the same underlying file, they will share the stream in memory. If a file that has already been opened (possibly by another query), then the \hyperlink{classbadgerdb_1_1File}{File} class detects this (by looking in the open\-\_\-streams\-\_\- map) and just returns a file object with the already created stream for the file without actually opening the U\-N\-I\-X file again.
+
+\begin{DoxyWarning}{Warning}
+This class is not threadsafe. 
+\end{DoxyWarning}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classbadgerdb_1_1File_a600baaf77d18f39e51ae7473eca633c4}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!File@{File}}
+\index{File@{File}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{File}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-File\-::\-File (
+\begin{DoxyParamCaption}
+\item[{const {\bf File} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1File_a600baaf77d18f39e51ae7473eca633c4}
+Copy constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{classbadgerdb_1_1File}{File} object to copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of the \hyperlink{classbadgerdb_1_1File}{File} object. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1File_a97fd6e3ae8dd11be883289b69d560287}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!$\sim$\-File@{$\sim$\-File}}
+\index{$\sim$\-File@{$\sim$\-File}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{$\sim$\-File}]{\setlength{\rightskip}{0pt plus 5cm}badgerdb\-::\-File\-::$\sim$\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1File_a97fd6e3ae8dd11be883289b69d560287}
+Destructor that automatically closes the underlying file if no other \hyperlink{classbadgerdb_1_1File}{File} objects are using it. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classbadgerdb_1_1File_a7d0e047bcc8dc4cee36aac5b2060bbe3}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!allocate\-Page@{allocate\-Page}}
+\index{allocate\-Page@{allocate\-Page}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{allocate\-Page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page} badgerdb\-::\-File\-::allocate\-Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1File_a7d0e047bcc8dc4cee36aac5b2060bbe3}
+Allocates a new page in the file.
+
+\begin{DoxyReturn}{Returns}
+The new page. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1File_a32e94f392eb3740dd9eb9101b9e09d47}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!begin@{begin}}
+\index{begin@{begin}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File\-Iterator} badgerdb\-::\-File\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1File_a32e94f392eb3740dd9eb9101b9e09d47}
+Returns an iterator at the first page in the file.
+
+\begin{DoxyReturn}{Returns}
+Iterator at first page of file. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1File_a1fb708b45103a606f189850d6bf83a0c}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!create@{create}}
+\index{create@{create}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File} badgerdb\-::\-File\-::create (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classbadgerdb_1_1File_a1fb708b45103a606f189850d6bf83a0c}
+Creates a new file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\-Exists\-Exception} & If the requested file already exists. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classbadgerdb_1_1File_a829a68ccfbeb0c9f66f3a2db7e0b99fe}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!delete\-Page@{delete\-Page}}
+\index{delete\-Page@{delete\-Page}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{delete\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-File\-::delete\-Page (
+\begin{DoxyParamCaption}
+\item[{const {\bf Page\-Id}}]{page\-\_\-number}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1File_a829a68ccfbeb0c9f66f3a2db7e0b99fe}
+Deletes a page from the file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page\-\_\-number} & Number of page to delete. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbadgerdb_1_1File_a01e224676a67634f21d53fc4189b8f11}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!end@{end}}
+\index{end@{end}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File\-Iterator} badgerdb\-::\-File\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1File_a01e224676a67634f21d53fc4189b8f11}
+Returns an iterator representing the page after the last page in the file. This iterator should not be dereferenced.
+
+\begin{DoxyReturn}{Returns}
+Iterator representing page after the last page in the file. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1File_a864d59b12302c26b14967bd1d3e520bd}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!exists@{exists}}
+\index{exists@{exists}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{exists}]{\setlength{\rightskip}{0pt plus 5cm}bool badgerdb\-::\-File\-::exists (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classbadgerdb_1_1File_a864d59b12302c26b14967bd1d3e520bd}
+Returns true if the file exists and is open.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbadgerdb_1_1File_ac61ce3c2233fd1f7e2e2a8a5a7640936}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!filename@{filename}}
+\index{filename@{filename}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string\& badgerdb\-::\-File\-::filename (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classbadgerdb_1_1File_ac61ce3c2233fd1f7e2e2a8a5a7640936}
+Returns the name of the file this object represents.
+
+\begin{DoxyReturn}{Returns}
+Name of file. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1File_a64836156a9bb5f81d2c2c4e6f3ada24d}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!is\-Open@{is\-Open}}
+\index{is\-Open@{is\-Open}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{is\-Open}]{\setlength{\rightskip}{0pt plus 5cm}bool badgerdb\-::\-File\-::is\-Open (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classbadgerdb_1_1File_a64836156a9bb5f81d2c2c4e6f3ada24d}
+Returns true if the file exists and is open.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbadgerdb_1_1File_a8462afdbd250c0a483ddfbde144c8732}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!open@{open}}
+\index{open@{open}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File} badgerdb\-::\-File\-::open (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classbadgerdb_1_1File_a8462afdbd250c0a483ddfbde144c8732}
+Opens the file named file\-Name and returns the corresponding \hyperlink{classbadgerdb_1_1File}{File} object. It first checks if the file is already open. If so, then the new \hyperlink{classbadgerdb_1_1File}{File} object created uses the same input-\/output stream to read to or write fom that already open file. Reference count (open\-\_\-counts\-\_\- static variable inside the \hyperlink{classbadgerdb_1_1File}{File} object) is incremented whenever an already open file is opened again. Otherwise the U\-N\-I\-X file is actually opened. The file\-Name and the stream associated with this \hyperlink{classbadgerdb_1_1File}{File} object are inserted into the open\-\_\-streams\-\_\- map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\-Not\-Found\-Exception} & If the requested file doesn't exist. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classbadgerdb_1_1File_ac403c631aec085e9f12992f260a57155}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!operator=@{operator=}}
+\index{operator=@{operator=}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File} \& badgerdb\-::\-File\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf File} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1File_ac403c631aec085e9f12992f260a57155}
+Assignment operator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \hyperlink{classbadgerdb_1_1File}{File} object to assign. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Newly assigned file object. 
+\end{DoxyReturn}
+\hypertarget{classbadgerdb_1_1File_aba4762b533499b7b7cc0774192ead27c}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!read\-Page@{read\-Page}}
+\index{read\-Page@{read\-Page}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{read\-Page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page} badgerdb\-::\-File\-::read\-Page (
+\begin{DoxyParamCaption}
+\item[{const {\bf Page\-Id}}]{page\-\_\-number}
+\end{DoxyParamCaption}
+) const}}\label{classbadgerdb_1_1File_aba4762b533499b7b7cc0774192ead27c}
+Reads an existing page from the file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page\-\_\-number} & Number of page to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The page. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\-Page\-Exception} & If the page doesn't exist in the file or is not currently used. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classbadgerdb_1_1File_a1cc69467366badbd68021ac76a91190e}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!remove@{remove}}
+\index{remove@{remove}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-File\-::remove (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classbadgerdb_1_1File_a1cc69467366badbd68021ac76a91190e}
+Deletes an existing file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\-Not\-Found\-Exception} & If the file doesn't exist. \\
+\hline
+{\em File\-Open\-Exception} & If the file is currently open. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classbadgerdb_1_1File_a9a1b3cc43c4631bde58c1c4f670e1036}{\index{badgerdb\-::\-File@{badgerdb\-::\-File}!write\-Page@{write\-Page}}
+\index{write\-Page@{write\-Page}!badgerdb::File@{badgerdb\-::\-File}}
+\subsubsection[{write\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void badgerdb\-::\-File\-::write\-Page (
+\begin{DoxyParamCaption}
+\item[{const {\bf Page} \&}]{new\-\_\-page}
+\end{DoxyParamCaption}
+)}}\label{classbadgerdb_1_1File_a9a1b3cc43c4631bde58c1c4f670e1036}
+Writes a page into the file, replacing any existing contents. The page must have been already allocated in this file by a call to \hyperlink{classbadgerdb_1_1File_a7d0e047bcc8dc4cee36aac5b2060bbe3}{allocate\-Page()}.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classbadgerdb_1_1File_a7d0e047bcc8dc4cee36aac5b2060bbe3}{allocate\-Page()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em new\-\_\-page} & \hyperlink{classbadgerdb_1_1Page}{Page} to write. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+file.\-h\item 
+file.\-cpp\end{DoxyCompactItemize}
